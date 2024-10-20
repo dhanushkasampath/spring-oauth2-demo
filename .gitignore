@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### client ids and secrets ###
+do-not-commit

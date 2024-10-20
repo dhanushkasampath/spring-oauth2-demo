@@ -14,9 +14,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-            .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
-            .oauth2Login(Customizer.withDefaults());
+            .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())// this line restricts the access to resources
+            .oauth2Login(Customizer.withDefaults()); // this line specifies that, "hey... I want to use oauth2 for login"
 
+        //in thi world google is not the only oauth2 provider. there are lot. So we need to pass which login we have to go for.
+        // That can be specified in application.properties.
         return httpSecurity.build();
     }
 }

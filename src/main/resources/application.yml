@@ -1,6 +1,17 @@
 spring:
   application:
     name:spring-oauth2-demo
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: <real-client-id>
+            client-secret: <real-client-secret>
+          github:
+            client-id: <real-client-id>
+            client-secret: <real-client-secret>
+    
 
 server:
   port: 8082
