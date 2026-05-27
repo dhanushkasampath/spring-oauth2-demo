@@ -1,13 +1,21 @@
 package com.learn.spring_oauth2_demo.controller;
 
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("api")
 public class HelloController {
 
-    @GetMapping("/")
-    public String greet(){
-        return "Hello from Malaysia!!";
+    @GetMapping("/public")
+    public String publicApi(){
+        return "This is a public API";
+    }
+
+    @GetMapping("/private")
+    public String privateApi(OAuth2AuthenticationToken token){
+        return "Authenticated " + token.getPrincipal().getAttribute("email");
     }
 }

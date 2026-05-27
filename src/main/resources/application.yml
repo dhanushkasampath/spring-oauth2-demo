@@ -15,3 +15,31 @@ spring:
 
 server:
   port: 8082
+
+
+#spring:
+#  application:
+#    name:spring-oauth2-demo
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            client-id: clientId   # -> this can be generated from console.cloud.google.com
+#            client-secret: clientSecret
+#            scope:  #This specifies what information is needed to us from google.
+#              - openid
+#              - profile
+#              - email
+#        #          github:
+#        #            client-id: <real-client-id>
+#        #            client-secret: <real-client-secret>
+#        provider:
+#          google:
+#            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+#            token-uri: https://oauth2.googleapis.com/token  # by using this uri, our application exchange tokens
+#            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo  # bu using this uri, our application can fetch user details from google, once we have the token
+#
+#
+#server:
+#  port: 8082
